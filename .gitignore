@@ -1,3 +1,6 @@
 /App/Desktop/Tsr/*.suo
 /App/Desktop/Tsr/Tsr/bin/Debug
 /App/Desktop/Tsr/Tsr/obj/Debug
+/App/Desktop/Tsr/Tsr/bin/Release
+/App/Desktop/Tsr/Tsr/obj/Release
+/App/Desktop/Tsr/packages/OpenCV.Net.3.2.2

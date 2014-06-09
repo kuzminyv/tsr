@@ -3,26 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="397" Width="731" Loaded="Window_Loaded">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
-        </Grid.RowDefinitions>
-        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
-        <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1">
-            <Image x:Name="imgSource"/>
-        </Border>
-        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="1">
-            <Image x:Name="imgResult"/>
-        </Border>
         
-        <Grid Grid.Row="1" Grid.ColumnSpan="2">
-            
+        <Grid Grid.Column="0">
+            <Border BorderBrush="Black" BorderThickness="1">
+                
+            </Border>
         </Grid>
 
+        <GridSplitter Grid.Column="1" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+        
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
+                <Image x:Name="imgSource"/>
+            </Border>
+            <GridSplitter Grid.Row="1" Height="5" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
+                <Image x:Name="imgResult"/>
+            </Border>
+        </Grid>       
     </Grid>
 </Window>

@@ -46,7 +46,7 @@ namespace Tsr
         private void ApplyFilter()
         {
             RawImage image = RawImage.FromBitmap((BitmapImage)imgSource.Source);
-            DerivativeFilter.Apply(image);
+            new DerivFilter().ApplyFilter(image);
             imgResult.Source = image.GetBitmap();
         }
 

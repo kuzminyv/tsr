@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpenCV.Net">
+      <HintPath>..\packages\OpenCV.Net.3.2.2\lib\net40\OpenCV.Net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -54,11 +57,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Imaging\DerivativeFilter.cs" />
-    <Compile Include="Imaging\IFilter.cs" />
-    <Compile Include="Imaging\Pixel.cs" />
-    <Compile Include="Imaging\RawPixel.cs" />
-    <Compile Include="Imaging\RawImage.cs" />
+    <Compile Include="Imaging\Filters\DerivFilter.cs" />
+    <Compile Include="Imaging\Filters\Common\Filter.cs" />
+    <Compile Include="Imaging\Filters\Common\IFilter.cs" />
+    <Compile Include="Imaging\Common\Pixel.cs" />
+    <Compile Include="Imaging\Common\RawPixel.cs" />
+    <Compile Include="Imaging\Common\RawImage.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -90,6 +94,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

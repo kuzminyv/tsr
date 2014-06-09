@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tsr.Imaging
 {
-    public interface IFilter
+    public struct Pixel
     {
-        RawImage ApplyFilter(RawImage image);
+        public double B;
+        public double G;
+        public double R;
+        public double A;
     }
 }

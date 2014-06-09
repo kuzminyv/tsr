@@ -12,7 +12,6 @@ namespace Tsr.Imaging
 {
     public class RawImage
     {
-        private readonly BitmapSource _bitmap;
         private readonly Pixel[,] _pixels;
         public Pixel[,] Pixels
         {
@@ -20,11 +19,6 @@ namespace Tsr.Imaging
             {
                 return _pixels;
             }
-        }
-
-        public static RawImage FromBitmap(BitmapImage bitmap)
-        {
-            return new RawImage(bitmap);
         }
 
         private void PutRawPixels(WriteableBitmap bitmap, RawPixel[,] pixels, int x, int y)
@@ -96,12 +90,30 @@ namespace Tsr.Imaging
             return bitmap;
         }
 
-        public RawImage(BitmapSource bitmap)
+        public RawImage GetCopy()
         {
-            _bitmap = bitmap;
+            return RawImage.FromPixels((Pixel[,])this._pixels.Clone());
+        }
 
+        protected RawImage(BitmapSource bitmap)
+        {
             RawPixel[,] rawPixels = GetRawPixels(bitmap);
             _pixels = ConvertToPixels(rawPixels);
+        }
+
+        protected RawImage(Pixel[,] pixels)
+        {
+            _pixels = pixels;
+        }
+
+        public static RawImage FromBitmap(BitmapImage bitmap)
+        {
+            return new RawImage(bitmap);
+        }
+
+        public static RawImage FromPixels(Pixel[,] pixels)
+        {
+            return new RawImage(pixels);
         }
     }
 }
