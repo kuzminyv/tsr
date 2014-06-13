@@ -1,6 +1,9 @@
-﻿<Window x:Class="Tsr.MainWindow"
+﻿<mvvm:BaseWindow x:Class="Tsr.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mvvm ="clr-namespace:Tsr.UI.Common.Mvvm"
+        xmlns:views ="clr-namespace:Tsr.UI.Views"
+        
         Title="MainWindow" Height="397" Width="731" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -11,7 +14,7 @@
         
         <Grid Grid.Column="0">
             <Border BorderBrush="Black" BorderThickness="1">
-                
+                <views:FiltersView DataContext="{Binding FiltersVM}"/>
             </Border>
         </Grid>
 
@@ -24,12 +27,12 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
-                <Image x:Name="imgSource"/>
+                <Image x:Name="imgSource" Source="{Binding SourceImage}"/>
             </Border>
             <GridSplitter Grid.Row="1" Height="5" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
             <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
-                <Image x:Name="imgResult"/>
+                <Image x:Name="imgResult" Source="{Binding ResultImage}"/>
             </Border>
         </Grid>       
     </Grid>
-</Window>
+    </mvvm:BaseWindow>

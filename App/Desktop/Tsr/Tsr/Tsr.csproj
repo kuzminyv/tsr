@@ -67,6 +67,13 @@
     <Compile Include="Data\Entities\Entity.cs" />
     <Compile Include="Data\Entities\Setting.cs" />
     <Compile Include="Data\SettingsRepository.cs" />
+    <Compile Include="Imaging\Filters\MainColorFilter.cs" />
+    <Compile Include="UI\Views\Filters\FiltersView.xaml.cs">
+      <DependentUpon>FiltersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\Filters\FiltersViewModel.cs" />
+    <Compile Include="UI\Views\Filters\FilterViewModel.cs" />
+    <Compile Include="UI\Views\Main\MainViewModel.cs" />
     <Compile Include="Utils\BufferedAction.cs" />
     <Compile Include="Utils\DynamicLinq.cs" />
     <Compile Include="Utils\RuntimeCompiler.cs" />
@@ -85,7 +92,11 @@
     <Compile Include="UI\Common\Mvvm\BaseWindowModel.cs" />
     <Compile Include="UI\Common\Mvvm\IWindowModel.cs" />
     <Compile Include="UI\Common\Mvvm\ViewModel.cs" />
-    <Page Include="UI\Views\Main\MainWindow.xaml">
+    <Page Include="UI\Views\Filters\FiltersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Views\Main\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -103,8 +114,8 @@
     <Compile Include="UI\Common\Utils\Threading\DeferredDispatcherTimer.cs" />
     <Compile Include="UI\Common\Utils\Threading\DefferedTimer.cs" />
     <Compile Include="UI\Common\Utils\Threading\JobQueue.cs" />
-    <Compile Include="UI\Views\Main\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="UI\Views\Main\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
