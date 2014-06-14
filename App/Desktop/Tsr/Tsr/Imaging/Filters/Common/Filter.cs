@@ -18,11 +18,19 @@ namespace Tsr.Imaging
             }
         }
 
+        public object OptionsObject
+        {
+            get
+            {
+                return _options;
+            }
+        }
+
         /// <summary>
         /// Calls func for each pixel
         /// </summary>
         /// <param name="func">func args: pixel, y, x</param>
-        protected void ForEachPixel(Pixel[,] pixels, Func<Pixel, int, int, Pixel> func)
+        protected void ForEachPixel(RgbPixel[,] pixels, Func<RgbPixel, int, int, RgbPixel> func)
         {
             for (int y = 0; y < pixels.GetLength(0); y++)
             {

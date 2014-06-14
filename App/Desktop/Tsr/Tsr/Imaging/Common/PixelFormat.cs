@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tsr.Imaging
+namespace Tsr.Imaging.Common
 {
-    public interface IFilter
+    public enum PixelFormat
     {
-        object OptionsObject { get; }
-        void ApplyFilter(RawImage image);
+        Rgb,
+        Hsv
     }
 }

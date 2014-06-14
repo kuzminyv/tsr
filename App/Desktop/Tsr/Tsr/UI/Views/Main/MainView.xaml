@@ -35,4 +35,4 @@
             </Border>
         </Grid>       
     </Grid>
-    </mvvm:BaseWindow>
+</mvvm:BaseWindow>

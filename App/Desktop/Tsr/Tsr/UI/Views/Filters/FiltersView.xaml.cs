@@ -20,9 +20,22 @@ namespace Tsr.UI.Views
     /// </summary>
     public partial class FiltersView : UserControl
     {
+        public FiltersViewModel Model
+        {
+            get
+            {
+                return (FiltersViewModel)DataContext;
+            }
+        }
+
         public FiltersView()
         {
             InitializeComponent();
+        }
+
+        private void PropertyGrid_PropertyValueChanged(object sender, Xceed.Wpf.Toolkit.PropertyGrid.PropertyValueChangedEventArgs e)
+        {
+            Model.OnPropertyValueChanged();
         }
     }
 }

@@ -3,10 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <ListBox ItemsSource="{Binding Filters}" HorizontalContentAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" HorizontalContentAlignment="Stretch"
+                 ItemsSource="{Binding Filters}" SelectedItem="{Binding SelectedFilter}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -20,5 +26,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+        <xctk:PropertyGrid Grid.Column="1" 
+                           SelectedObject="{Binding SelectedFilter.Options}"
+                           PropertyValueChanged="PropertyGrid_PropertyValueChanged"/>
+            
     </Grid>
 </UserControl>

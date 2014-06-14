@@ -23,6 +23,14 @@ namespace Tsr.UI.Views
             }
         }
 
+        public object Options
+        {
+            get
+            {
+                return _model.OptionsObject;
+            }
+        }
+
         private readonly FiltersViewModel _filtersVM;
         public FiltersViewModel FiltersVM
         {

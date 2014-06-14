@@ -51,6 +51,24 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -67,7 +85,10 @@
     <Compile Include="Data\Entities\Entity.cs" />
     <Compile Include="Data\Entities\Setting.cs" />
     <Compile Include="Data\SettingsRepository.cs" />
-    <Compile Include="Imaging\Filters\MainColorFilter.cs" />
+    <Compile Include="Imaging\Common\HsvPixel.cs" />
+    <Compile Include="Imaging\Common\PixelFormat.cs" />
+    <Compile Include="Imaging\Filters\HsvComponentToGrayScaleFilter.cs" />
+    <Compile Include="Imaging\Filters\RGBMainColorFilter.cs" />
     <Compile Include="UI\Views\Filters\FiltersView.xaml.cs">
       <DependentUpon>FiltersView.xaml</DependentUpon>
     </Compile>
@@ -81,7 +102,7 @@
     <Compile Include="Imaging\Filters\DerivFilter.cs" />
     <Compile Include="Imaging\Filters\Common\Filter.cs" />
     <Compile Include="Imaging\Filters\Common\IFilter.cs" />
-    <Compile Include="Imaging\Common\Pixel.cs" />
+    <Compile Include="Imaging\Common\RgbPixel.cs" />
     <Compile Include="Imaging\Common\RawPixel.cs" />
     <Compile Include="Imaging\Common\RawImage.cs" />
     <Compile Include="UI\Commands\AppCommands.cs" />

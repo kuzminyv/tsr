@@ -22,10 +22,28 @@ namespace Tsr.UI.Views
                     _filters = new ObservableCollection<FilterViewModel>() 
                     { 
                         new FilterViewModel(new DerivFilter(), this),
-                        new FilterViewModel(new MainColorFilter(), this)
+                        new FilterViewModel(new RGBMainColorFilter(), this),
+                        new FilterViewModel(new HsvComponentToGrayScaleFilter(), this)
                     };
                 }
                 return _filters;
+            }
+        }
+
+        private FilterViewModel _selectedFilter;
+        public FilterViewModel SelectedFilter
+        {
+            get
+            {
+                return _selectedFilter;
+            }
+            set
+            {
+                if (_selectedFilter != value)
+                {
+                    _selectedFilter = value;
+                    OnPropertyChanged("SelectedFilter");
+                }
             }
         }
 
@@ -41,6 +59,11 @@ namespace Tsr.UI.Views
         public FiltersViewModel(MainViewModel mainVM)
         {
             _mainVM = mainVM;
+        }
+
+        public void OnPropertyValueChanged()
+        {
+            SelectedFilter.ApplyFilter();
         }
     }
 }

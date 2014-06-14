@@ -9,11 +9,11 @@ namespace Tsr.Imaging.Filters
     public class MainColorFilterOptions
     {
     }
-    public class MainColorFilter :Filter<MainColorFilterOptions>
+    public class RGBMainColorFilter :Filter<MainColorFilterOptions>
     {
         public override void ApplyFilter(RawImage image)
         {
-            ForEachPixel(image.Pixels, (p, y, x) =>
+            ForEachPixel(image.RgbPixels, (p, y, x) =>
             {
                 if (p.R > p.G && p.R > p.B)
                 {

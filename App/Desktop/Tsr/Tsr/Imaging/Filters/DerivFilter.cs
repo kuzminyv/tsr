@@ -27,14 +27,14 @@ namespace Tsr.Imaging
             var dx = Options.Dx;
             var dy = Options.Dy;
 
-            for (int y = 0; y < image.Pixels.GetLength(0) - dy; y++)
+            for (int y = 0; y < image.RgbPixels.GetLength(0) - dy; y++)
             {
-                for (int x = 0; x < image.Pixels.GetLength(1) - dx; x++)
+                for (int x = 0; x < image.RgbPixels.GetLength(1) - dx; x++)
                 {
                     double k = 1; 
-                    image.Pixels[y, x].R = (255 - Math.Abs(image.Pixels[y, x].R - image.Pixels[y + dy, x + dx].R));
-                    image.Pixels[y, x].G = (255 - Math.Abs(image.Pixels[y, x].G - image.Pixels[y + dy, x + dx].G));
-                    image.Pixels[y, x].B = (255 - Math.Abs(image.Pixels[y, x].B - image.Pixels[y + dy, x + dx].B));
+                    image.RgbPixels[y, x].R = (255 - Math.Abs(image.RgbPixels[y, x].R - image.RgbPixels[y + dy, x + dx].R));
+                    image.RgbPixels[y, x].G = (255 - Math.Abs(image.RgbPixels[y, x].G - image.RgbPixels[y + dy, x + dx].G));
+                    image.RgbPixels[y, x].B = (255 - Math.Abs(image.RgbPixels[y, x].B - image.RgbPixels[y + dy, x + dx].B));
                 }
             }
         }
