@@ -88,6 +88,7 @@
     <Compile Include="Imaging\Common\HsvPixel.cs" />
     <Compile Include="Imaging\Common\PixelFormat.cs" />
     <Compile Include="Imaging\Filters\HsvComponentToGrayScaleFilter.cs" />
+    <Compile Include="Imaging\Filters\HsvThresholdFilter.cs" />
     <Compile Include="Imaging\Filters\RGBMainColorFilter.cs" />
     <Compile Include="UI\Views\Filters\FiltersView.xaml.cs">
       <DependentUpon>FiltersView.xaml</DependentUpon>

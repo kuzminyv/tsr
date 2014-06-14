@@ -23,7 +23,8 @@ namespace Tsr.UI.Views
                     { 
                         new FilterViewModel(new DerivFilter(), this),
                         new FilterViewModel(new RGBMainColorFilter(), this),
-                        new FilterViewModel(new HsvComponentToGrayScaleFilter(), this)
+                        new FilterViewModel(new HsvComponentToGrayScaleFilter(), this),
+                        new FilterViewModel(new HsvThresholdFilter(), this)
                     };
                 }
                 return _filters;
